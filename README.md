@@ -28,12 +28,12 @@ Main preprocessing steps include:
 
 ## Preprocessing Steps
 ### 1. Launch MATLAB and Add Paths
-'''
+```
 addpath('/path/to/spm12');
 addpath('/path/to/cat12');
 spm('defaults', 'FMRI');
 spm_jobman('initcfg');
-'''
+```
 
 ### 2. Run CAT12 Batch Script
 
@@ -61,17 +61,17 @@ CAT12 automatically generates a report (catreport_sub-XX.pdf) for each subject, 
 - Surface reconstruction check
 
 You can also inspect the normalized GM maps using SPM’s “Check Reg” function:
-'''
+```
 spm_check_registration('mwp1sub-01_T1w.nii');
 
-'''
+```
 ### 5. Optional: Group-Level Analysis (VBM)
 
 After preprocessing, you can use the smoothed modulated GM images (smwp1*.nii) for VBM analysis.
 
 Example scripts included three main steps: 1)sooth the GM files (mwp1*.nii);2) build the design; 3) estimate the model, and 4) create common contrasts — with optional covariates (Age, Sex, TIV).
 
-'''
+```
 % ================================================================
 % VBM TWO-GROUP ANALYSIS (CAT12/SPM12)
 % Author: <you>
@@ -333,7 +333,7 @@ end
 
 fprintf('Done. Open SPM -> Results to review thresholded maps.\n');
 
-'''
+```
 #### CSV FORMAT (example)
 
 Save as subjects.csv (headers required).
@@ -344,13 +344,13 @@ group: 1 for Controls, 2 for Patients (you can rename labels in the config).
 
 Optional columns: age, sex (0/1 or 1/2), tiv (Total Intracranial Volume from CAT12 reports or export).
 
-'''
+```
 subject_id,gm_path,group,age,sex,tiv
 sub-01,/proj/derivatives/cat12/sub-01/mwp1sub-01_T1w.nii,1,24,1,1536000
 sub-02,/proj/derivatives/cat12/sub-02/mwp1sub-02_T1w.nii,1,26,0,1490000
 sub-10,/proj/derivatives/cat12/sub-10/mwp1sub-10_T1w.nii,2,25,1,1512000
 sub-11,/proj/derivatives/cat12/sub-11/mwp1sub-11_T1w.nii,2,29,0,1483000
-'''
+```
 
 ### References
 
