@@ -74,8 +74,8 @@ Example scripts included three main steps: 1)sooth the GM files (mwp1*.nii);2) b
 ```
 % ================================================================
 % VBM TWO-GROUP ANALYSIS (CAT12/SPM12)
-% Author: <you>
-% Date: <today>
+% Author: lz
+%
 %
 % Pipeline:
 %   1) Read subject table (CSV)
